@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { type StaticImageData } from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ParallaxImage } from "@/components/motion/parallax-image";
@@ -10,7 +11,7 @@ interface HeroProps {
   titleEm: string;
   titleBottom?: string;
   body: string;
-  image: string;
+  image: string | StaticImageData;
   imageAlt: string;
   primaryCta?: { href: string; label: string };
   secondaryCta?: { href: string; label: string };

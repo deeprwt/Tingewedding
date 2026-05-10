@@ -1,16 +1,31 @@
-export type ServiceGroup = "planning" | "decor" | "hospitality";
+import type { StaticImageData } from "next/image";
+import stationeryFlatlay from "@/assets/gallery/details-gallery/39f55ab5eb86f3dac73de5d1ef9e4b3f.jpg";
+import stationeryFans from "@/assets/gallery/details-gallery/27d81f2a05bee5a44f77290ac08bd323.jpg";
+import stationerySuite from "@/assets/gallery/details-gallery/1131b63fce06b3fbaa109393475306d0.jpg";
+import stationerySigns from "@/assets/gallery/details-gallery/787dd98c57e01131ad8f6ad2c1ece0df.jpg";
+import stationeryDetail1 from "@/assets/gallery/details-gallery/8bbbf8437a8f4ccc7c09e18c1cc2666c.jpg";
+import stationeryDetail2 from "@/assets/gallery/details-gallery/b6f6fb1de2ac15e2a139267ea415c926.jpg";
+import stationeryDetail3 from "@/assets/gallery/details-gallery/f3f4993192811ae65f4990c9ef9040f9.jpg";
+
+export type ServiceGroup =
+  | "planning"
+  | "decor"
+  | "hospitality"
+  | "stationery";
+
+type ImageSrc = string | StaticImageData;
 
 export interface ServiceCategory {
   id: string;
   title: string;
   group: ServiceGroup;
   bullets: string[];
-  images: { src: string; alt: string }[];
+  images: { src: ImageSrc; alt: string }[];
 }
 
 const stripImages = (
   seeds: { id: string; alt: string }[],
-): { src: string; alt: string }[] =>
+): { src: ImageSrc; alt: string }[] =>
   seeds.map((s) => ({
     src: `https://images.unsplash.com/${s.id}?auto=format&fit=crop&w=900&q=80`,
     alt: s.alt,
@@ -110,20 +125,6 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     ]),
   },
   {
-    id: "stationery",
-    title: "Stationery, Signage & Print",
-    group: "decor",
-    bullets: [
-      "Save-the-dates, invites and itinerary booklets",
-      "On-site signage, menu cards and seating charts",
-      "Letterpress, foiling and handmade processes",
-    ],
-    images: stripImages([
-      { id: "photo-1525772764200-be829a350797", alt: "Wedding stationery" },
-      { id: "photo-1606216794074-735e91aa2c92", alt: "Print collateral" },
-    ]),
-  },
-  {
     id: "tablescape",
     title: "Tablescape & Dining Décor",
     group: "decor",
@@ -194,5 +195,63 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       { id: "photo-1606216794074-735e91aa2c92", alt: "Wedding gifts" },
       { id: "photo-1525772764200-be829a350797", alt: "Hospitality kit" },
     ]),
+  },
+
+  // ── Designing Stationery ─────────────────────────────────
+  {
+    id: "invitation-suites",
+    title: "Save-the-Dates & Invitation Suites",
+    group: "stationery",
+    bullets: [
+      "Bespoke invitation suites tailored to the wedding's design language",
+      "Save-the-dates, RSVP cards, ceremony booklets and itinerary inserts",
+      "Bilingual and multi-script typesetting where the families call for it",
+    ],
+    images: [
+      { src: stationeryFlatlay, alt: "Invitation suite with tassels and motifs" },
+      { src: stationerySuite, alt: "Detail of an invitation suite" },
+    ],
+  },
+  {
+    id: "monograms-illustration",
+    title: "Monograms, Crests & Illustration",
+    group: "stationery",
+    bullets: [
+      "Custom monograms and family crests, drawn by hand",
+      "Watercolour and line illustrations of venues, motifs and heritage symbols",
+      "A consistent visual identity used across print, signage and on-day collateral",
+    ],
+    images: [
+      { src: stationeryDetail1, alt: "Hand-illustrated monograms and motifs" },
+      { src: stationeryDetail3, alt: "Bespoke crests on print" },
+    ],
+  },
+  {
+    id: "onday-print",
+    title: "On-Day Print: Menus, Place Cards & Signage",
+    group: "stationery",
+    bullets: [
+      "Welcome boards, seating charts and directional signage",
+      "Menu cards, place cards and table numbers in coordinated finishes",
+      "Mandap, bar and pheras signage placed thoughtfully across the venue",
+    ],
+    images: [
+      { src: stationerySigns, alt: "Wedding signage and menus on-site" },
+      { src: stationeryFans, alt: "Place cards and ceremony fans" },
+    ],
+  },
+  {
+    id: "print-finishes",
+    title: "Print Finishes: Letterpress, Foil & Hand-Painting",
+    group: "stationery",
+    bullets: [
+      "Letterpress, foil-stamping, embossing and deckle-edge work",
+      "Tassels, wax seals, ribbon ties and hand-painted edges",
+      "Sourcing across artisanal print houses in India and abroad",
+    ],
+    images: [
+      { src: stationeryDetail2, alt: "Letterpress and finishing details" },
+      { src: stationeryFlatlay, alt: "Foil and tassel finishes on stationery" },
+    ],
   },
 ];

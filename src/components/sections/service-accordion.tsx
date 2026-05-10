@@ -106,7 +106,11 @@ export function ServiceAccordion({
                           <div className="flex gap-3 md:gap-4 pb-2">
                             {cat.images.map((img, i) => (
                               <button
-                                key={img.src}
+                                key={
+                                  typeof img.src === "string"
+                                    ? img.src
+                                    : img.src.src
+                                }
                                 type="button"
                                 onClick={() => openLightbox(cat, i)}
                                 className="relative h-44 md:h-56 aspect-[4/3] flex-shrink-0 overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"

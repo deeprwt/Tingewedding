@@ -9,7 +9,7 @@ import { ScrollReveal } from "@/components/motion/scroll-reveal";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Planning, decor and hospitality — three disciplines under one boutique studio roof.",
+    "Planning, decor, hospitality and stationery — four disciplines under one boutique studio roof.",
 };
 
 const PROCESS = [
@@ -39,6 +39,7 @@ const SECTION_NAV = [
   { id: "planning", label: "Planning" },
   { id: "decor", label: "Decor" },
   { id: "hospitality", label: "Hospitality" },
+  { id: "stationery", label: "Designing Stationery" },
 ];
 
 export default function ServicesPage(): JSX.Element {
@@ -58,15 +59,15 @@ export default function ServicesPage(): JSX.Element {
       <section className="bg-background border-b border-border">
         <div className="container-wide pt-16 pb-4">
           <SectionHeading
-            eyebrow="An atelier in three parts"
+            eyebrow="An atelier in four parts"
             title="Our Services"
-            subtitle="Planning, decor and hospitality — held by the same hands."
+            subtitle="Planning, decor, hospitality and stationery — held by the same hands."
             leftElement="frame366"
             rightElement="frame367"
             birdElement="bird1"
           />
         </div>
-        <nav className="container-wide border-t border-border grid grid-cols-3 text-center">
+        <nav className="container-wide border-t border-border grid grid-cols-2 md:grid-cols-4 text-center">
           {SECTION_NAV.map((s) => (
             <Link
               key={s.id}
@@ -94,6 +95,15 @@ export default function ServicesPage(): JSX.Element {
       <div id="hospitality" className="scroll-mt-20 py-20 md:py-28">
         <ScrollReveal>
           <ServiceAccordion group="hospitality" title="Hospitality" />
+        </ScrollReveal>
+      </div>
+
+      <div id="stationery" className="scroll-mt-20 py-20 md:py-28 bg-sand">
+        <ScrollReveal>
+          <ServiceAccordion
+            group="stationery"
+            title="Designing Stationery"
+          />
         </ScrollReveal>
       </div>
 

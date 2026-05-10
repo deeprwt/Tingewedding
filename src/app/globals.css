@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 25 14% 16%;
 
-    --primary: 332 58% 38%;
+    --primary: 352 42% 49%;
     --primary-foreground: 36 38% 96%;
 
     --secondary: 36 33% 90%;
@@ -22,7 +22,7 @@
     --muted: 36 22% 88%;
     --muted-foreground: 25 8% 42%;
 
-    --accent: 332 65% 45%;
+    --accent: 352 55% 58%;
     --accent-foreground: 36 38% 96%;
 
     --ink-blue: 25 18% 14%;
@@ -32,7 +32,7 @@
 
     --border: 30 14% 82%;
     --input: 30 14% 82%;
-    --ring: 332 58% 38%;
+    --ring: 352 42% 49%;
 
     --ink: 25 22% 9%;
     --sand: 36 38% 92%;
@@ -71,10 +71,12 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
   }
   body {
     @apply bg-background text-foreground font-sans;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
   }
   ::selection {
     background: hsl(var(--accent) / 0.5);

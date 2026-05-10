@@ -1,14 +1,16 @@
 import Link from "next/link";
+import { type StaticImageData } from "next/image";
 import { ArrowRight } from "lucide-react";
 import { ParallaxImage } from "@/components/motion/parallax-image";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { Button } from "@/components/ui/button";
+import footerAboveBg from "@/assets/background/footer-above-bg.jpeg";
 
 interface CtaBandProps {
   eyebrow?: string;
   title: string;
   body?: string;
-  image?: string;
+  image?: string | StaticImageData;
   imageAlt?: string;
   cta?: { href: string; label: string };
 }
@@ -17,7 +19,7 @@ export function CtaBand({
   eyebrow = "Begin",
   title,
   body,
-  image = "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80",
+  image = footerAboveBg,
   imageAlt = "Wedding atmosphere",
   cta = { href: "/contact", label: "Start a conversation" },
 }: CtaBandProps): JSX.Element {

@@ -7,6 +7,7 @@ import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { ParallaxImage } from "@/components/motion/parallax-image";
 import { GALLERY, type GalleryItem } from "@/data/gallery";
 import { cn } from "@/lib/utils";
+import galleryHero from "@/assets/gallery/ceremony-gallery/a7784c90-37a6-4183-a6f2-7df066243e82.jpg";
 
 const FILTERS: { id: GalleryItem["category"] | "all"; label: string }[] = [
   { id: "all", label: "All" },
@@ -30,8 +31,8 @@ export default function GalleryPage(): JSX.Element {
     <>
       <section className="relative h-[70vh] min-h-[480px] w-full overflow-hidden bg-ink text-primary-foreground">
         <ParallaxImage
-          src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=2400&q=85"
-          alt="Wedding tablescape"
+          src={galleryHero}
+          alt="Selected wedding work archive"
           speed={0.35}
           priority
           containerClassName="absolute inset-0"

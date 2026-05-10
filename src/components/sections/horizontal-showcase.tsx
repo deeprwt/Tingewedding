@@ -1,54 +1,54 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { cn } from "@/lib/utils";
+import hyattImage from "@/assets/closerlook/hyatt-regency.jpeg";
+import fairmontImage from "@/assets/closerlook/fairmont.jpeg";
+import westinImage from "@/assets/closerlook/westin-sohna-resort.jpeg";
+import cityParkImage from "@/assets/closerlook/city-park.jpeg";
+import neemranaImage from "@/assets/closerlook/neemrana-fort-palace.jpeg";
 
 export interface ShowcaseItem {
   venue: string;
   couple: string;
-  image: string;
+  image: string | StaticImageData;
   alt: string;
 }
 
 const DEFAULTS: ShowcaseItem[] = [
   {
-    venue: "Lakeside Palace, Udaipur",
-    couple: "Aanya & Rohan",
-    image:
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=85",
-    alt: "Couple at a palace wedding",
-  },
-  {
-    venue: "Villa San Crispolto, Tuscany",
+    venue: "Hyatt Regency, Dehradun",
     couple: "Ishita & Daniyal",
-    image:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=85",
-    alt: "Villa wedding in Tuscany",
+    image: hyattImage,
+    alt: "Wedding at Hyatt Regency, Dehradun",
   },
   {
-    venue: "Private Estate, New Delhi",
+    venue: "Fairmont, Jaipur",
     couple: "Meera & Karan",
-    image:
-      "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85",
-    alt: "Estate wedding in Delhi",
+    image: fairmontImage,
+    alt: "Royal palace wedding at Fairmont, Jaipur",
   },
   {
-    venue: "Hilltop Retreat, Coorg",
-    couple: "Naina & Vikram",
-    image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=85",
-    alt: "Hill retreat wedding",
+    venue: "The Westin Sohna Resort & Spa, Haryana",
+    couple: "Anjali & Vansh",
+    image: westinImage,
+    alt: "Resort wedding at The Westin Sohna",
   },
   {
-    venue: "Beach House, Goa",
-    couple: "Sara & Arjun",
-    image:
-      "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=85",
-    alt: "Beach wedding in Goa",
+    venue: "City Park, Delhi",
+    couple: "Sanskriti & Divyam",
+    image: cityParkImage,
+    alt: "Boutique city wedding at City Park, Delhi",
+  },
+  {
+    venue: "Neemrana Fort Palace, Rajasthan",
+    couple: "Sunita & Sanjeev",
+    image: neemranaImage,
+    alt: "Heritage fort wedding at Neemrana Fort Palace",
   },
 ];
 

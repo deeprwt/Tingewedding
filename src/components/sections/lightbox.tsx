@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface LightboxImage {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
 }
 
@@ -101,7 +101,7 @@ export function Lightbox({
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          key={current.src}
+          key={typeof current.src === "string" ? current.src : current.src.src}
           className="relative w-full h-full max-w-6xl max-h-[85vh] animate-fade-in"
         >
           <Image

@@ -47,7 +47,7 @@ export function GalleryGrid({
       >
         {list.map((item, i) => (
           <ScrollReveal
-            key={item.src}
+            key={typeof item.src === "string" ? item.src : item.src.src}
             direction="up"
             delay={(i % 3) * 90}
             className={cn(

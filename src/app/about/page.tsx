@@ -5,6 +5,9 @@ import { Stats } from "@/components/sections/stats";
 import { CtaBand } from "@/components/sections/cta-band";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
+import aboutHero from "@/assets/background/about-us.jpeg";
+import story1Image from "@/assets/about-us/story-1.jpeg";
+import story2Image from "@/assets/about-us/story-2.jpeg";
 
 export const metadata: Metadata = {
   title: "About",
@@ -19,7 +22,7 @@ const PRINCIPLES = [
   },
   {
     title: "Quiet",
-    body: "Our presence should be felt, not seen — every cue rehearsed, every handover clean.",
+    body: "Our presence should be felt, not seen — every cue rehearsed, every ritual flowing effortlessly.",
   },
   {
     title: "Detail-led",
@@ -68,7 +71,7 @@ export default function AboutPage(): JSX.Element {
         titleEm="weddings"
         titleBottom="that feel like you."
         body="A boutique atelier of planners, designers and producers — small on purpose, held end to end by the same hands."
-        image="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=2400&q=85"
+        image={aboutHero}
         imageAlt="Atelier moodboard and details"
       />
 
@@ -100,9 +103,17 @@ export default function AboutPage(): JSX.Element {
           </ScrollReveal>
           <ScrollReveal delay={120}>
             <p className="font-display text-3xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] text-balance">
-              We believe a wedding should look like{" "}
-              <em className="text-primary">the people getting married</em> —
-              not a copy of the last beautiful one we saw.
+              No two love stories are the same, so{" "}
+              <em className="text-primary">
+                no two weddings should be either
+              </em>
+              .
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={200}>
+            <p className="mt-8 font-display text-xl md:text-2xl lg:text-3xl text-foreground/80 leading-snug max-w-3xl mx-auto text-balance">
+              Every couple is unique — and we believe their wedding should feel
+              just as personal.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={260}>
@@ -115,13 +126,13 @@ export default function AboutPage(): JSX.Element {
 
       {/* Asymmetric story */}
       <section className="py-20 md:py-28 bg-sand">
-        <div className="container-wide grid gap-12 lg:gap-20 md:grid-cols-12 items-start">
-          <ScrollReveal direction="left" className="md:col-span-6">
+        <div className="container-wide grid gap-8 lg:gap-12 md:grid-cols-12 items-start">
+          <div className="md:col-span-6 md:sticky md:top-24 self-start">
             <div className="grid grid-cols-2 gap-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm mt-12">
                 <Image
-                  src="https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=crop&w=900&q=80"
-                  alt="Studio details"
+                  src={story1Image}
+                  alt="Tablescape and floral details"
                   fill
                   sizes="(min-width: 768px) 25vw, 50vw"
                   className="object-cover"
@@ -129,41 +140,50 @@ export default function AboutPage(): JSX.Element {
               </div>
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
                 <Image
-                  src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=80"
-                  alt="Florals and stationery"
+                  src={story2Image}
+                  alt="A toast among friends"
                   fill
                   sizes="(min-width: 768px) 25vw, 50vw"
                   className="object-cover"
                 />
               </div>
             </div>
-          </ScrollReveal>
+          </div>
 
           <ScrollReveal
             direction="right"
-            className="md:col-span-5 md:col-start-8 lg:pt-8"
+            className="md:col-span-6 lg:pt-8"
           >
             <p className="eyebrow mb-5">Our story</p>
             <h2 className="font-display text-3xl md:text-5xl text-foreground leading-[1.05] mb-8">
-              Eleven years of <em className="text-primary">quietly</em> building
-              a practice we&apos;re proud of.
+              Quietly crafting weddings that{" "}
+              <em className="text-primary">feel like you</em>.
             </h2>
             <div className="space-y-5 text-foreground/75 leading-relaxed">
               <p>
-                We started as friends with too many opinions about florals and
-                a shared belief that a wedding should look like the people
-                getting married. A decade in, that idea still leads.
+                Tinge began with a simple belief: a wedding should look and
+                feel like the people getting married — not a repetition of
+                what&apos;s already been done. What started as a shared love
+                for details, design, and meaningful celebrations soon became a
+                practice rooted in listening first.
               </p>
               <p>
-                Conversations come first. Before mood-boards, vendors, or
-                budgets, we sit with the couple and figure out what kind of
-                weekend feels true to them. Loud or hushed. Steeped in family
-                or stripped back to the closest few.
+                Before themes, timelines, or décor, we sit with our couples.
+                We understand their stories, their families, and the moments
+                that matter most to them. From intimate gatherings to elaborate
+                celebrations, every wedding we create is personal, thoughtful,
+                and deeply intentional.
               </p>
               <p>
-                Most of our work comes by referral. We keep the studio small on
-                purpose: a handful of weddings a year, held end to end, by the
-                same hands.
+                We remain boutique by choice — hands-on, detail-driven, and
+                present from start to finish. Each celebration is guided
+                end-to-end by the same team, ensuring consistency, care, and
+                calm throughout the journey.
+              </p>
+              <p className="font-display italic text-lg md:text-xl text-foreground leading-relaxed pt-2">
+                At Tinge, we don&apos;t just plan weddings. We curate
+                experiences — crafted with heart, held together by trust, and
+                remembered for how they felt.
               </p>
             </div>
           </ScrollReveal>

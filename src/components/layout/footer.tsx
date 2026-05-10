@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, Facebook, Mail, Phone, ArrowUpRight } from "lucide-react";
+import { Instagram, Mail, Phone, ArrowUpRight } from "lucide-react";
 import { ELEMENTS } from "@/data/elements";
+import { SITE } from "@/data/site";
+import logo from "@/assets/logo.png";
 
 const NAV = [
   { href: "/", label: "Home" },
@@ -15,6 +17,7 @@ const SERVICES = [
   { href: "/services#planning", label: "Planning" },
   { href: "/services#decor", label: "Decor" },
   { href: "/services#hospitality", label: "Hospitality" },
+  { href: "/services#stationery", label: "Designing Stationery" },
 ];
 
 export function Footer(): JSX.Element {
@@ -51,9 +54,14 @@ export function Footer(): JSX.Element {
         <Link
           href="/"
           aria-label="Tinge Wedding — home"
-          className="inline-block font-display text-3xl md:text-4xl tracking-wide text-background"
+          className="inline-block"
         >
-          Tinge<span className="text-primary">.</span>Wedding
+          <Image
+            src={logo}
+            alt="Tinge Wedding"
+            sizes="(min-width: 768px) 220px, 180px"
+            className="h-14 md:h-16 w-auto object-contain mx-auto"
+          />
         </Link>
         <p className="mt-4 text-sm italic text-background/65 max-w-xl mx-auto leading-relaxed">
           A boutique wedding atelier crafting intentional celebrations —
@@ -109,19 +117,19 @@ export function Footer(): JSX.Element {
             <li className="flex items-start gap-3">
               <Mail className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
               <a
-                href="mailto:hello@tinge.wedding"
-                className="hover:text-primary transition-colors"
+                href={`mailto:${SITE.email}`}
+                className="hover:text-primary transition-colors break-all"
               >
-                hello@tinge.wedding
+                {SITE.email}
               </a>
             </li>
             <li className="flex items-start gap-3">
               <Phone className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
               <a
-                href="tel:+910000000000"
+                href={`tel:${SITE.phone.replace(/\s/g, "")}`}
                 className="hover:text-primary transition-colors"
               >
-                +91 00000 00000
+                {SITE.phone}
               </a>
             </li>
             <li className="text-background/65 leading-relaxed">
@@ -133,14 +141,9 @@ export function Footer(): JSX.Element {
 
           <div className="flex items-center gap-3 mt-7">
             <SocialIcon
-              href="https://instagram.com"
+              href={SITE.instagram}
               label="Instagram"
               icon={<Instagram className="h-4 w-4" />}
-            />
-            <SocialIcon
-              href="https://facebook.com"
-              label="Facebook"
-              icon={<Facebook className="h-4 w-4" />}
             />
           </div>
         </div>

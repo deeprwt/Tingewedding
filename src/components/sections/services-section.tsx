@@ -19,9 +19,8 @@ export function ServicesSection(): JSX.Element {
           </ScrollReveal>
           <ScrollReveal delay={140} className="md:col-span-6 md:col-start-7">
             <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-              Three disciplines, held under one roof. Most couples engage us
-              across all three — we will gladly take on a single phase if it is
-              the right fit.
+              Your one-stop solution for all wedding needs.
+              We bring everything under one roof—from planning and decor to designing stationery, and hospitality. With expertise across every detail, we ensure a seamless, stress-free experience, so you can truly enjoy your special day.
             </p>
             <Link
               href="/services"
@@ -40,9 +39,8 @@ export function ServicesSection(): JSX.Element {
             >
               <article className="grid md:grid-cols-12 gap-8 items-center group">
                 <div
-                  className={`relative aspect-[4/3] overflow-hidden md:col-span-5 ${
-                    i % 2 === 0 ? "md:order-1" : "md:order-2"
-                  }`}
+                  className={`relative aspect-[4/3] overflow-hidden md:col-span-5 ${i % 2 === 0 ? "md:order-1" : "md:order-2"
+                    }`}
                 >
                   <Image
                     src={service.image}
@@ -53,9 +51,8 @@ export function ServicesSection(): JSX.Element {
                   />
                 </div>
                 <div
-                  className={`md:col-span-6 ${
-                    i % 2 === 0 ? "md:order-2 md:col-start-7" : "md:order-1"
-                  }`}
+                  className={`md:col-span-6 ${i % 2 === 0 ? "md:order-2 md:col-start-7" : "md:order-1"
+                    }`}
                 >
                   <p className="eyebrow text-accent mb-3">{service.eyebrow}</p>
                   <h3 className="font-display text-4xl md:text-5xl text-primary mb-4">
