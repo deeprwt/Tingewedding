@@ -235,8 +235,8 @@ function MobileHero({
 }): JSX.Element {
   return (
     <div className="md:hidden pt-24 pb-14 bg-background">
-      <div className="relative px-8">
-        <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-ink shadow-md">
+      <div className="relative">
+        <div className="relative aspect-[3/4] overflow-hidden bg-ink shadow-md">
           {SLIDES.map((slide, i) => (
             <video
               key={slide.phoneSrc}
@@ -254,26 +254,34 @@ function MobileHero({
             />
           ))}
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
+          {/* Bottom gradient — lifts the pill + dots off the video */}
+          <div
+            aria-hidden
+            className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ink/75 to-transparent pointer-events-none z-[5]"
+          />
+
+          {/* Arrows — vertically centered, on top of video, highlighted */}
+          <button
+            onClick={() => setActive((active - 1 + total) % total)}
+            aria-label="Previous slide"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 h-11 w-11 inline-flex items-center justify-center rounded-full bg-ink/55 backdrop-blur-sm text-primary-foreground border border-primary-foreground/30 hover:bg-primary hover:border-primary transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+          </button>
+          <button
+            onClick={() => setActive((active + 1) % total)}
+            aria-label="Next slide"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 h-11 w-11 inline-flex items-center justify-center rounded-full bg-ink/55 backdrop-blur-sm text-primary-foreground border border-primary-foreground/30 hover:bg-primary hover:border-primary transition-colors"
+          >
+            <ArrowRight className="h-4 w-4" />
+          </button>
+
+          {/* Couple pill + dots — bottom */}
+          <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center gap-2 pb-5">
             <CouplePill current={current} size="sm" />
             <Dots active={active} setActive={setActive} size="sm" />
           </div>
         </div>
-
-        <button
-          onClick={() => setActive((active - 1 + total) % total)}
-          aria-label="Previous slide"
-          className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-10 inline-flex items-center justify-center text-ink-blue/70 hover:text-ink-blue transition-colors"
-        >
-          <ArrowLeft className="h-5 w-5" />
-        </button>
-        <button
-          onClick={() => setActive((active + 1) % total)}
-          aria-label="Next slide"
-          className="absolute right-0 top-1/2 -translate-y-1/2 h-10 w-10 inline-flex items-center justify-center text-ink-blue/70 hover:text-ink-blue transition-colors"
-        >
-          <ArrowRight className="h-5 w-5" />
-        </button>
       </div>
 
       <div className="px-6 mt-9 text-center">
