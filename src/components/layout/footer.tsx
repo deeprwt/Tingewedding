@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Mail, Phone, ArrowUpRight } from "lucide-react";
-import { ELEMENTS } from "@/data/elements";
+import { Sprig } from "@/components/decor/ornament";
 import { SITE } from "@/data/site";
 import logo from "@/assets/logo.png";
 
@@ -22,31 +22,19 @@ const SERVICES = [
 
 export function Footer(): JSX.Element {
   return (
-    <footer className="relative bg-foreground text-background overflow-hidden">
-      {/* Subtle botanical accents — top corners, small and refined */}
+    <footer className="relative bg-background text-foreground overflow-hidden">
+      {/* Subtle sprig accents — top corners, small and refined */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-4 left-0 w-20 md:w-24 lg:w-28 opacity-[0.18] select-none"
+        className="pointer-events-none absolute top-6 left-2 w-12 md:w-14 lg:w-16 text-primary/30 select-none"
       >
-        <Image
-          src={ELEMENTS.branchLeft}
-          alt=""
-          width={300}
-          height={300}
-          className="object-contain w-full h-auto"
-        />
+        <Sprig side="left" />
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute top-4 right-0 w-20 md:w-24 lg:w-28 opacity-[0.18] select-none"
+        className="pointer-events-none absolute top-6 right-2 w-12 md:w-14 lg:w-16 text-primary/30 select-none"
       >
-        <Image
-          src={ELEMENTS.branchRight}
-          alt=""
-          width={300}
-          height={300}
-          className="object-contain w-full h-auto"
-        />
+        <Sprig side="right" />
       </div>
 
       {/* Top brand band with centered mark */}
@@ -63,29 +51,29 @@ export function Footer(): JSX.Element {
             className="h-14 md:h-16 w-auto object-contain mx-auto"
           />
         </Link>
-        <p className="mt-4 text-sm italic text-background/65 max-w-xl mx-auto leading-relaxed">
+        <p className="mt-4 text-sm italic text-foreground/65 max-w-xl mx-auto leading-relaxed">
           A boutique wedding atelier crafting intentional celebrations —
           quietly, end to end.
         </p>
 
         {/* Ornamental divider */}
         <div className="mt-10 flex items-center justify-center gap-4">
-          <span className="h-px w-20 md:w-32 bg-background/20" />
+          <span className="h-px w-20 md:w-32 bg-foreground/20" />
           <span className="font-display italic text-primary/90 text-lg">✦</span>
-          <span className="h-px w-20 md:w-32 bg-background/20" />
+          <span className="h-px w-20 md:w-32 bg-foreground/20" />
         </div>
       </div>
 
       {/* Main grid */}
       <div className="container-wide pb-16 grid gap-12 md:grid-cols-12 relative z-10">
         <div className="md:col-span-4">
-          <p className="eyebrow text-background/50 mb-5">Explore</p>
+          <p className="eyebrow text-foreground/50 mb-5">Explore</p>
           <ul className="space-y-3 text-sm">
             {NAV.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="group inline-flex items-center gap-2 text-background/80 hover:text-primary transition-colors"
+                  className="group inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors"
                 >
                   {l.label}
                   <ArrowUpRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -96,13 +84,13 @@ export function Footer(): JSX.Element {
         </div>
 
         <div className="md:col-span-3">
-          <p className="eyebrow text-background/50 mb-5">Services</p>
+          <p className="eyebrow text-foreground/50 mb-5">Services</p>
           <ul className="space-y-3 text-sm">
             {SERVICES.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="text-background/80 hover:text-primary transition-colors"
+                  className="text-foreground/80 hover:text-primary transition-colors"
                 >
                   {l.label}
                 </Link>
@@ -112,8 +100,8 @@ export function Footer(): JSX.Element {
         </div>
 
         <div className="md:col-span-5">
-          <p className="eyebrow text-background/50 mb-5">Studio</p>
-          <ul className="space-y-3.5 text-sm text-background/80">
+          <p className="eyebrow text-foreground/50 mb-5">Studio</p>
+          <ul className="space-y-3.5 text-sm text-foreground/80">
             <li className="flex items-start gap-3">
               <Mail className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
               <a
@@ -132,7 +120,7 @@ export function Footer(): JSX.Element {
                 {SITE.phone}
               </a>
             </li>
-            <li className="text-background/65 leading-relaxed">
+            <li className="text-foreground/65 leading-relaxed">
               Open by appointment.
               <br />
               Across India and beyond.
@@ -150,8 +138,8 @@ export function Footer(): JSX.Element {
       </div>
 
       {/* Bottom copyright */}
-      <div className="border-t border-background/10 relative z-10">
-        <div className="container-wide py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-background/50">
+      <div className="border-t border-foreground/10 relative z-10">
+        <div className="container-wide py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-foreground/50">
           <p>© {new Date().getFullYear()} Tinge Wedding. All rights reserved.</p>
           <p className="italic">Held with intention.</p>
         </div>
@@ -175,7 +163,7 @@ function SocialIcon({
       aria-label={label}
       target="_blank"
       rel="noreferrer"
-      className="h-9 w-9 inline-flex items-center justify-center rounded-full border border-background/20 text-background/70 hover:text-primary hover:border-primary transition-colors"
+      className="h-9 w-9 inline-flex items-center justify-center rounded-full border border-foreground/20 text-foreground/70 hover:text-primary hover:border-primary transition-colors"
     >
       {icon}
     </Link>

@@ -5,6 +5,7 @@ import { ServiceAccordion } from "@/components/sections/service-accordion";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { CtaBand } from "@/components/sections/cta-band";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
+import serviceBg from "@/assets/background/service-bg.jpeg";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -51,7 +52,7 @@ export default function ServicesPage(): JSX.Element {
         titleEm="held under"
         titleBottom="one roof."
         body="A boutique practice covering planning, decor, and hospitality. Engage us across all three or pick the phase that fits."
-        image="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=2400&q=85"
+        image={serviceBg}
         imageAlt="Wedding setup at dusk"
         primaryCta={{ href: "/contact", label: "Start an enquiry" }}
       />

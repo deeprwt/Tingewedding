@@ -6,6 +6,7 @@ import { ParallaxImage } from "@/components/motion/parallax-image";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { Separator } from "@/components/ui/separator";
 import { SITE } from "@/data/site";
+import contactBg from "@/assets/background/contact-bg.jpeg";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -18,14 +19,14 @@ export default function ContactPage(): JSX.Element {
     <>
       <section className="relative min-h-[60vh] w-full overflow-hidden bg-ink text-primary-foreground">
         <ParallaxImage
-          src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=2400&q=85"
-          alt="Wedding aisle florals"
+          src={contactBg}
+          alt="Garden mandap with chandeliers and florals"
           speed={0.3}
           priority
           containerClassName="absolute inset-0"
-          className="brightness-[0.55]"
+          className="brightness-[0.72]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 to-ink/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/65 via-ink/35 to-ink/70" />
         <div className="relative z-10 container-wide pt-40 pb-24">
           <ScrollReveal>
             <p className="eyebrow text-primary-foreground/70 mb-6">

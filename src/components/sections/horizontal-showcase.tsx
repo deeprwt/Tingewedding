@@ -28,7 +28,7 @@ const DEFAULTS: ShowcaseItem[] = [
   },
   {
     venue: "Fairmont, Jaipur",
-    couple: "Meera & Karan",
+    couple: "Shruti & Kanvarn",
     image: fairmontImage,
     alt: "Royal palace wedding at Fairmont, Jaipur",
   },

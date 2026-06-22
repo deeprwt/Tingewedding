@@ -16,7 +16,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       "Calm, exacting, and quietly funny when the day ran a little wild. We never once felt the strings being pulled.",
-    author: "Meera & Karan",
+    author: "Shruti & Kanvar",
     role: "Coastal Wedding",
     location: "Goa",
   },

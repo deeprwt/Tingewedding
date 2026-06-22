@@ -32,7 +32,7 @@ const SLIDES: VideoSlide[] = [
   {
     webSrc: "/videos/wedding-web.mp4",
     phoneSrc: "/videos/wedding-phone.mp4",
-    couple: "Meera & Karan",
+    couple: "Shruti & Kanvar",
     location: "Udaipur",
     date: "Feb '25",
   },

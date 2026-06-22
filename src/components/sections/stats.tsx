@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { Counter } from "@/components/motion/counter";
-import { ELEMENTS } from "@/data/elements";
+import { Sprig } from "@/components/decor/ornament";
 
 interface Stat {
   value: number;
@@ -11,12 +10,6 @@ interface Stat {
 }
 
 const STATS: Stat[] = [
-  {
-    value: 12,
-    suffix: "+",
-    label: "Years in the craft",
-    caption: "Quietly building, season after season",
-  },
   {
     value: 240,
     suffix: "+",
@@ -54,32 +47,20 @@ export function Stats(): JSX.Element {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,transparent_40%,rgba(0,0,0,0.18)_100%)]"
       />
 
-      {/* Decorative botanical — top right */}
+      {/* Decorative sprig — top right */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-6 -right-10 w-48 md:w-72 lg:w-96 opacity-[0.12] select-none rotate-12"
+        className="pointer-events-none absolute -top-10 -right-2 w-24 md:w-36 lg:w-48 text-champagne opacity-25 select-none rotate-12"
       >
-        <Image
-          src={ELEMENTS.tree}
-          alt=""
-          width={500}
-          height={500}
-          className="object-contain w-full h-auto"
-        />
+        <Sprig side="right" />
       </div>
 
-      {/* Decorative botanical — bottom left */}
+      {/* Decorative sprig — bottom left */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-12 -left-12 w-44 md:w-64 lg:w-80 opacity-[0.10] select-none -rotate-12"
+        className="pointer-events-none absolute -bottom-16 -left-2 w-20 md:w-32 lg:w-44 text-champagne opacity-20 select-none -rotate-12"
       >
-        <Image
-          src={ELEMENTS.branchLeft}
-          alt=""
-          width={500}
-          height={500}
-          className="object-contain w-full h-auto"
-        />
+        <Sprig side="left" />
       </div>
 
       <div className="container-wide relative z-10">
@@ -167,7 +148,7 @@ export function Stats(): JSX.Element {
           <div className="mt-20 flex items-center justify-center gap-4 text-primary-foreground/75">
             <span className="h-px w-16 bg-champagne/40" />
             <span className="text-[11px] uppercase tracking-widest2 italic text-champagne">
-              Held with intention, since 2013
+              Held with intention, since 2023
             </span>
             <span className="h-px w-16 bg-champagne/40" />
           </div>

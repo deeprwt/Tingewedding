@@ -5,16 +5,16 @@ import { Stats } from "@/components/sections/stats";
 import { Testimonials } from "@/components/sections/testimonials";
 import { GalleryGrid } from "@/components/sections/gallery-grid";
 import { HorizontalShowcase } from "@/components/sections/horizontal-showcase";
-import { InstagramCarousel } from "@/components/sections/instagram-carousel";
+// import { InstagramCarousel } from "@/components/sections/instagram-carousel";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { CtaBand } from "@/components/sections/cta-band";
-import { getInstagramReels } from "@/lib/instagram";
+// import { getInstagramReels } from "@/lib/instagram";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export default async function HomePage(): Promise<JSX.Element> {
-  const reels = await getInstagramReels();
+  // const reels = await getInstagramReels();
 
   return (
     <>
@@ -28,7 +28,8 @@ export default async function HomePage(): Promise<JSX.Element> {
 
       <HorizontalShowcase />
 
-      <InstagramCarousel items={reels} />
+      {/* Reel section hidden — restore by uncommenting the imports, reels fetch above, and the line below */}
+      {/* <InstagramCarousel items={reels} /> */}
 
       <section className="py-24 md:py-32 bg-sand">
         <div className="container-wide">

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
-import { ELEMENTS, type ElementKey } from "@/data/elements";
+import { type ElementKey } from "@/data/elements";
+import { Sprig, Spark } from "@/components/decor/ornament";
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
@@ -50,36 +50,28 @@ export function SectionHeading({
     tone === "light" && "text-primary-foreground/60",
   );
 
+  const ornamentColor =
+    tone === "light" ? "text-primary-foreground/45" : "text-primary/60";
+
   return (
     <div className={cn("relative px-4", className)}>
       {leftElement ? (
-        <DecorElement
-          src={ELEMENTS[leftElement]}
-          side="left"
-          aria-hidden
-        />
+        <DecorElement side="left" className={ornamentColor} />
       ) : null}
 
       {rightElement ? (
-        <DecorElement
-          src={ELEMENTS[rightElement]}
-          side="right"
-          aria-hidden
-        />
+        <DecorElement side="right" className={ornamentColor} />
       ) : null}
 
       {birdElement ? (
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-4 right-[28%] w-10 md:w-14 lg:w-16 hidden sm:block opacity-90"
+          className={cn(
+            "pointer-events-none absolute -top-3 right-[28%] w-5 md:w-6 hidden sm:block",
+            ornamentColor,
+          )}
         >
-          <Image
-            src={ELEMENTS[birdElement]}
-            alt=""
-            width={120}
-            height={120}
-            className="object-contain"
-          />
+          <Spark />
         </div>
       ) : null}
 
@@ -108,31 +100,26 @@ export function SectionHeading({
 }
 
 function DecorElement({
-  src,
   side,
+  className,
 }: {
-  src: string;
   side: "left" | "right";
+  className?: string;
 }): JSX.Element {
   return (
     <div
       aria-hidden
       className={cn(
         "pointer-events-none absolute top-1/2 -translate-y-1/2",
-        "hidden sm:block opacity-85 select-none",
-        "w-14 md:w-20 lg:w-24 xl:w-28",
+        "hidden sm:block opacity-90 select-none",
+        "w-10 md:w-12 lg:w-16 xl:w-20",
         side === "left"
-          ? "left-[calc(50%-50vw)]"
-          : "right-[calc(50%-50vw)]",
+          ? "left-[calc(50%-48vw)]"
+          : "right-[calc(50%-48vw)]",
+        className,
       )}
     >
-      <Image
-        src={src}
-        alt=""
-        width={300}
-        height={300}
-        className="object-contain w-full h-auto"
-      />
+      <Sprig side={side} />
     </div>
   );
 }

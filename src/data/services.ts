@@ -2,6 +2,7 @@ import type { StaticImageData } from "next/image";
 import planningImage from "@/assets/services/planning.jpeg";
 import decorImage from "@/assets/services/decor.jpeg";
 import hospitalityImage from "@/assets/services/hospitality.jpeg";
+import stationeryImage from "@/assets/services/designing-stationery.jpeg";
 
 export interface Service {
   slug: string;
@@ -11,9 +12,6 @@ export interface Service {
   bullets: string[];
   image: string | StaticImageData;
 }
-
-const STATIONERY_PLACEHOLDER =
-  "https://images.unsplash.com/photo-1523289333742-be1143f6b766?auto=format&fit=crop&w=1600&q=80";
 
 export const SERVICES: Service[] = [
   {
@@ -70,6 +68,6 @@ export const SERVICES: Service[] = [
       "On-day menus, place cards and signage",
       "Letterpress, foil, hand-painting and fine print finishes",
     ],
-    image: STATIONERY_PLACEHOLDER,
+    image: stationeryImage,
   },
 ];

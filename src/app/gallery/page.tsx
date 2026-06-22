@@ -36,9 +36,9 @@ export default function GalleryPage(): JSX.Element {
           speed={0.35}
           priority
           containerClassName="absolute inset-0"
-          className="brightness-[0.55]"
+          className="brightness-[0.8]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 to-ink/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/20 to-ink/85" />
         <div className="relative z-10 container-wide h-full flex flex-col justify-end pb-20 pt-32">
           <ScrollReveal>
             <p className="eyebrow text-primary-foreground/70 mb-6">

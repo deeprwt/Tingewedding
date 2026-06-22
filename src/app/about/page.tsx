@@ -8,6 +8,9 @@ import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import aboutHero from "@/assets/background/about-us.jpeg";
 import story1Image from "@/assets/about-us/story-1.jpeg";
 import story2Image from "@/assets/about-us/story-2.jpeg";
+import anamikaPanda from "@/assets/users/Anamika-Panda.jpeg";
+import antaraPanda from "@/assets/users/Antara-Panda.jpeg";
+import arbazReza from "@/assets/users/MD-Arbaz-Reza.jpeg";
 
 export const metadata: Metadata = {
   title: "About",
@@ -43,22 +46,19 @@ const MARQUEE_WORDS = [
 
 const TEAM = [
   {
-    name: "Anaïs Mehra",
-    role: "Founder, Creative Direction",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+    name: "Anamika Panda",
+    role: "Founder, Creative Director",
+    image: anamikaPanda,
   },
   {
-    name: "Devika Rao",
+    name: "Antara Panda",
     role: "Head of Planning",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+    image: antaraPanda,
   },
   {
-    name: "Karan Iyer",
-    role: "Production & Logistics",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+    name: "MD Arbaz Reza",
+    role: "Hospitality & Production Head",
+    image: arbazReza,
   },
 ];
 
@@ -233,12 +233,11 @@ export default function AboutPage(): JSX.Element {
       <section className="py-24 md:py-32 bg-sand">
         <div className="container-wide">
           <SectionHeading
-            eyebrow="The hands behind"
-            title="A small studio, by design"
-            subtitle="Held end to end by the same people."
-            leftElement="frame369"
-            rightElement="frame370"
-            birdElement="bird2"
+            title="The people behind every Tinge wedding"
+            subtitle="Held end to end by the same hands."
+            leftElement={null}
+            rightElement={null}
+            birdElement={null}
             className="mb-14"
           />
 

@@ -1,9 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { Plus, Minus } from "lucide-react";
-import { Lightbox, type LightboxImage } from "@/components/sections/lightbox";
 import {
   SERVICE_CATEGORIES,
   type ServiceCategory,
@@ -25,15 +23,6 @@ export function ServiceAccordion({
   const [openId, setOpenId] = React.useState<string | null>(
     defaultOpenId ?? items[0]?.id ?? null,
   );
-  const [lightboxImages, setLightboxImages] = React.useState<LightboxImage[]>(
-    [],
-  );
-  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
-
-  const openLightbox = (cat: ServiceCategory, i: number): void => {
-    setLightboxImages(cat.images);
-    setActiveIndex(i);
-  };
 
   return (
     <section className="bg-background">
@@ -89,7 +78,7 @@ export function ServiceAccordion({
                 >
                   <div className="overflow-hidden">
                     <div className="pb-10 pt-2">
-                      <ul className="grid gap-3 md:grid-cols-2 max-w-4xl mb-8">
+                      <ul className="grid gap-3 md:grid-cols-2 max-w-4xl">
                         {cat.bullets.map((b) => (
                           <li
                             key={b}
@@ -100,35 +89,6 @@ export function ServiceAccordion({
                           </li>
                         ))}
                       </ul>
-
-                      {cat.images.length > 0 ? (
-                        <div className="-mx-6 px-6 overflow-x-auto scrollbar-hide">
-                          <div className="flex gap-3 md:gap-4 pb-2">
-                            {cat.images.map((img, i) => (
-                              <button
-                                key={
-                                  typeof img.src === "string"
-                                    ? img.src
-                                    : img.src.src
-                                }
-                                type="button"
-                                onClick={() => openLightbox(cat, i)}
-                                className="relative h-44 md:h-56 aspect-[4/3] flex-shrink-0 overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                                aria-label="Open image preview"
-                              >
-                                <Image
-                                  src={img.src}
-                                  alt={img.alt}
-                                  fill
-                                  sizes="(min-width: 768px) 25vw, 60vw"
-                                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-                                />
-                                <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/20 transition-colors duration-300" />
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -137,13 +97,6 @@ export function ServiceAccordion({
           })}
         </div>
       </div>
-
-      <Lightbox
-        images={lightboxImages}
-        index={activeIndex}
-        onClose={() => setActiveIndex(null)}
-        onNavigate={(i) => setActiveIndex(i)}
-      />
     </section>
   );
 }
